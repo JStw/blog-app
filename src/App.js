@@ -8,7 +8,7 @@ import CreateMovie from './Components/CreateArticle/CreateMovie';
 import EditArticle from './Components/EditArticle/EditArticle';
 import Home from './Components/Home/Home';
 
-export const API_BASE_URL = 'put your api base url here (do not put the /)';
+export const API_BASE_URL = 'https://79geaxjz93.execute-api.eu-west-2.amazonaws.com';
 
 function App() {
     return (
