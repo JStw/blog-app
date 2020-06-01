@@ -2,20 +2,19 @@ import { useState } from 'react';
 import { API_BASE_URL } from '../../App';
 
 
-function useCreateMovie() {
+function useCreateArticle() {
     const [status, setStatus] = useState({ error: '', success: false })
 
-    const createMovie = (movie) => {
+    const createArticle = (article) => {
 
         const payload = JSON.stringify({
-            title: movie.title,
-            author: movie.author,
-            description: movie.description,
-            genre: movie.genre,
-            year: +movie.year
+            title: article.title,
+            category: article.category,
+            author: article.author,
+            content: article.content
         });
 
-        fetch(`${API_BASE_URL}/movies`, {method: 'POST', body: payload})
+        fetch(`${API_BASE_URL}/articles`, {method: 'POST', body: payload})
             .then(response => response.json())
             .then(data => {
                 if (!data || !data.length) {
@@ -27,7 +26,7 @@ function useCreateMovie() {
             .catch(error => setStatus({...status, success: false, error}))
     }
 
-    return {createMovie, status}
+    return {createArticle, status}
 }
 
-export default useCreateMovie
+export default useCreateArticle

@@ -10,7 +10,7 @@ export const Article = (props) => {
                     <p className="card-text">
                         {props.article.content}<br/>
                         <NavLink className="nav-link" to={{pathname:`/edit/${props.article.title}/${props.article.category}`, state: {article: props.article}}}>
-                            Edit movie
+                            Edit article
                         </NavLink>
                         <button onClick={props.onDelete(props.article)}>Delete</button>
                     </p>
